@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import web3 from "../web3.js";
 import ipfs from "../ipfs.js";
 import ViewSection from './ViewSection';
@@ -14,7 +13,9 @@ class Dashboard extends Component {
             blockNumber:'',
             transactionHash:'',
             gasUsed:'',
-            txReceipt: ''  }
+            txReceipt: '',
+            account:''
+        }
     }
     captureFile =(event) => {
         event.stopPropagation()
@@ -33,9 +34,9 @@ class Dashboard extends Component {
     onSubmit = async (event) => {
         event.preventDefault();
        //bring in user's metamask account address
-        const accounts = this.props.account;
+        const accounts = this.state.account;
        
-        console.log('Sending from Metamask account: ' +this.props.account);
+        console.log('Sending from Metamask account: ' +this.state.account);
       //obtain contract address from storehash.js
         // const ethAddress= await storehash.options.address;
         // this.setState({ethAddress});
@@ -49,8 +50,8 @@ class Dashboard extends Component {
     //return the transaction hash from the ethereum contract
     //see, this https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-send
           
-          storehash.methods.addHash(this.state.ipfsHash,this.props.account).send({
-              from:this.props.account
+          storehash.methods.addHash(this.state.ipfsHash,this.state.account).send({
+              from:this.state.account
           }, (error, transactionHash) => {
             console.log(transactionHash);
             this.setState({transactionHash});
@@ -58,10 +59,16 @@ class Dashboard extends Component {
         }) //await ipfs.add 
       }; //onSubmit
       //to render
+      componentDidMount(){
+        var that = this;
+        web3.eth.getAccounts(function(error,result) {
+            that.setState({account: result[0]})
+        });
+      }
     render() { 
         return ( 
             <div style={{}}>
-                Dashboard account id = {this.props.account}
+                Dashboard account id = {this.state.account}
                 <h3> Choose file to send to IPFS </h3>
           <form onSubmit={this.onSubmit}>
             <input 
@@ -88,8 +95,5 @@ class Dashboard extends Component {
     }
 }
 
-Dashboard.propTypes = {
-    account: PropTypes.string.isRequired,
-}
 
 export default Dashboard;
