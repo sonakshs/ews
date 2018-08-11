@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "fs-extra": "^7.0.0",
+    "ipfs-api": "^23.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
