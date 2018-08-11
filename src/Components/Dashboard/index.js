@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import web3 from "../web3.js";
 import ipfs from "../ipfs.js";
+import ViewSection from './ViewSection';
+import UploadSection from './UploadSection';
+
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -57,7 +60,7 @@ class Dashboard extends Component {
       //to render
     render() { 
         return ( 
-            <div>
+            <div style={{backgroundColor: '#707ce6'}}>
                 Dashboard account id = {this.props.account}
                 <h3> Choose file to send to IPFS </h3>
           <form onSubmit={this.onSubmit}>
@@ -70,6 +73,18 @@ class Dashboard extends Component {
              Send it 
              </button>
           </form>
+                <div className="container">
+                    <div className="row">
+                        <div className="col s12">
+                            <UploadSection/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col s12">
+                            <ViewSection/>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
