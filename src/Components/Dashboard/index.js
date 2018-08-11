@@ -10,17 +10,15 @@ class Dashboard extends Component {
     }
     render() { 
         return ( 
-            <div style={{backgroundColor: '#707ce6'}}>
+            <div style={{}}>
                 Dashboard account id = {this.props.account}
-                <div className="container">
+                <div className="container" style={{backgroundColor: 'rgb(201, 206, 253)', height: '-webkit-fill-available'}}>
                     <div className="row">
-                        <div className="col s12">
-                            <UploadSection/>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col s12">
+                        <div className="col s12 m6">
                             <ViewSection/>
+                        </div>
+                        <div className="col s12 m6">
+                            <UploadSection/>
                         </div>
                     </div>
                 </div>
