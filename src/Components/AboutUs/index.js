@@ -7,41 +7,41 @@ class AboutUs extends Component {
     }
     render() { 
         return (  
-            <div className="container" style={{marginTop: '10em'}}>
+            <div className="container" style={{marginTop: '3em'}}>
                 <div className="row">
                     <div className="col s12 m4">
                         <div className="card">
                             <div className="card-image">
-                                <img src="sonaksh.png"/>
+                                <img src="https://gateway.ipfs.io/ipfs/QmZRFypC6eNwNs96JHYgJg2h3aU9tGyd99jMPPMSrpTMZ7"/>
                                 <span className="card-title">Sonaksh</span>
-                                <a href="https://www.linkedin.com/in/sonaksh-saraswat-83b2549b/" target="_blank" className="btn-floating halfway-fab waves-effect waves-light blue"><i className="material-icons">open_in_new</i></a>
+                                <a href="https://www.linkedin.com/in/sonaksh-saraswat-83b2549b/" target="_blank" className="btn-floating halfway-fab waves-effect waves-light" style={{backgroundColor: 'rgb(6, 45, 76)'}}><i className="material-icons">open_in_new</i></a>
                                 </div>
                                 <div className="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                <p>B.Tech(IV year) Computer Science and Engineering, NIT Uttarakhand.<br/></p>
                             </div>
                         </div>
                     </div>
                     <div className="col s12 m4">
                         <div className="card">
                             <div className="card-image">
-                                <img src="../"/>
+                                <img src="https://gateway.ipfs.io/ipfs/QmNPntuYbEpx6RkjEnJ2sBmTgMV8fMcsPmJ4WgJkMNtbe8"/>
                                 <span className="card-title">Pulkit</span>
-                                <a href="https://www.linkedin.com/in/sonaksh-saraswat-83b2549b/" target="_blank" className="btn-floating halfway-fab waves-effect waves-light blue"><i className="material-icons">open_in_new</i></a>
+                                <a href="https://www.linkedin.com/in/pulkit-kashyap-974b6b124/" target="_blank" className="btn-floating halfway-fab waves-effect waves-light" style={{backgroundColor: 'rgb(6, 45, 76)'}}><i className="material-icons">open_in_new</i></a>
                                 </div>
                                 <div className="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                <p>B.Tech(IV year) Computer Science and Engineering, IP University, New Delhi.</p>
                             </div>
                         </div>
                     </div>
                     <div className="col s12 m4">
                         <div className="card">
                             <div className="card-image">
-                                <img src="../static/media/"/>
+                                <img src="https://gateway.ipfs.io/ipfs/QmSdZMBHm9Gqki2RewrNcGk4BKKDtQVGtbAVKVuvgqJGew"/>
                                 <span className="card-title">Sahil</span>
-                                <a href="https://www.linkedin.com/in/sonaksh-saraswat-83b2549b/" target="_blank" className="btn-floating halfway-fab waves-effect waves-light blue"><i className="material-icons">open_in_new</i></a>
+                                <a href="https://www.linkedin.com/in/sahil-chaudhary-899897119/" target="_blank" className="btn-floating halfway-fab waves-effect waves-light" style={{backgroundColor: 'rgb(6, 45, 76)'}}><i className="material-icons">open_in_new</i></a>
                                 </div>
                                 <div className="card-content">
-                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                <p>Software Engineer, <a href="http://happay.in" target="_blank">Happay.in</a>, Bangalore</p>
                             </div>
                         </div>
                     </div>

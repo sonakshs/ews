@@ -11,7 +11,7 @@ class ViewTransactions extends Component {
    }
    renderState(){
        var that = this;
-       for(var i=0;i<3;i++){
+       for(var i=0;i<5;i++){
            storeHash.methods.getHash(this.props.account,i).call().then(function(res){
               console.log(res);
               if(res["0"]){
@@ -32,7 +32,12 @@ class ViewTransactions extends Component {
            <tr key={index}>
                <td>{index + 1}</td>
                <td>{transactionObject["0"]}</td>
-               <td>{transactionObject["1"]}</td>
+               <td>{transactionObject["1"]}&nbsp;bytes</td>
+               <td>
+                   <a href={"https://gateway.ipfs.io/ipfs/"+transactionObject["0"]} target="_blank" className="btn btn-small">
+                        Click to Open
+                   </a>
+               </td>
            </tr>
        )
    })
@@ -42,8 +47,11 @@ class ViewTransactions extends Component {
                    <thead>
                    <tr>
                        <th>Name</th>
-                       <th>Item Name</th>
-                       <th>Item Price</th>
+                       <th>IPFS Hash</th>
+                       <th>Size</th>
+                       <th>
+                           View File
+                       </th>
                    </tr>
                    </thead>
                    <tbody>

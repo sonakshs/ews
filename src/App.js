@@ -16,7 +16,29 @@ class App extends Component {
       }
       this.changeAccount = this.changeAccount.bind(this);
       this.changeStatus = this.changeStatus.bind(this);
-  }
+      this.toggleLogoutClass = this.toggleLogoutClass.bind(this);
+      this.toggleLoginClass = this.toggleLoginClass.bind(this);
+    }
+   
+    toggleLogoutClass() {
+      var modalClass = document.getElementById('logoutModal').style.display
+      if(!modalClass || modalClass == "none")
+        document.getElementById('logoutModal').style.display = "block";
+      setTimeout(function() { 
+        document.getElementById("logoutModal").style.display = "none"; 
+      }, 
+      2000);
+    }
+    toggleLoginClass() {
+      var modalClass = document.getElementById('loginModal').style.display
+      if(!modalClass || modalClass == "none")
+        document.getElementById('loginModal').style.display = "block";
+      setTimeout(function() { 
+        document.getElementById("loginModal").style.display = "none"; 
+      }, 
+      2000);
+    }
+
     changeAccount(value){
       this.setState({account:value})
     }
@@ -47,8 +69,8 @@ class App extends Component {
           <li>
             <Link to="/viewTransactions">View Transactions</Link>
           </li>
-          <li>
-            <Link to="#">Logout</Link>
+          <li>      
+            <a onClick={this.toggleLogoutClass}>Logout</a>
           </li>
           <li>
             <Link to="/about">About Us</Link>
@@ -58,7 +80,7 @@ class App extends Component {
       const navLoggedOut = (
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>      
-            <Link to="/#">Login</Link>
+            <a onClick={this.toggleLoginClass}>Login</a>
           </li>
           <li>
             <Link to="/about">About Us</Link>
@@ -76,14 +98,14 @@ class App extends Component {
       const viewTransactions = () => (
         <ViewTransactions account={this.state.account}/>
       );
+      
       return (
-        
         <div className="App">
           <Router>
           <div>
             <nav>
               <div className="nav-wrapper" style={{backgroundColor: '#062d4c'}}>
-                <a href="#" style={{float: 'left', fontSize: '4em', marginLeft: '0.5em', marginTop: '0.052em'}}>ews</a>
+                <a href="/" style={{float: 'left', fontSize: '4em', marginLeft: '0.5em', marginTop: '0.052em'}}>ews</a>
                 {nav}
               </div>
             </nav>
@@ -93,6 +115,16 @@ class App extends Component {
             <Route path="/about" component={AboutUs} />
           </div>
           </Router>
+          <div id="logoutModal" className="modal">
+            <div className="modal-content">
+              <p>Logout your Metamask Account to Logout of EWS.</p>
+            </div>
+          </div>
+          <div id="loginModal" className="modal">
+            <div className="modal-content">
+              <p>Login through Metamask and refresh this page.</p>
+            </div>
+          </div>
         </div>
       );
     }
