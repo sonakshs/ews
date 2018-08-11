@@ -1,7 +1,7 @@
 import web3 from './web3';
 //access our local copy to contract deployed on rinkeby testnet
 //use your own contract address
-const address = '0xa14cc7a348d8d434189857fe3738b25aa39fc9d3';
+const address = '0x93b0849fe42Eed60C656915b18f2B0241b94A885';
 //use the ABI from your contract
 const abi = [
 	{
@@ -14,6 +14,10 @@ const abi = [
 			{
 				"name": "_add",
 				"type": "address"
+			},
+			{
+				"name": "size",
+				"type": "uint256"
 			}
 		],
 		"name": "addHash",
@@ -54,8 +58,12 @@ const abi = [
 		"name": "AddressToDetail",
 		"outputs": [
 			{
-				"name": "",
+				"name": "theHash",
 				"type": "string"
+			},
+			{
+				"name": "size",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -79,6 +87,10 @@ const abi = [
 			{
 				"name": "",
 				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
