@@ -12,7 +12,8 @@ class Dashboard extends Component {
             transactionHash:'',
             gasUsed:'',
             txReceipt: '',
-            account:''
+            account:'',
+            size:-1
         }
     }
     captureFile =(event) => {
@@ -43,12 +44,12 @@ class Dashboard extends Component {
         await ipfs.add(this.state.buffer, (err, ipfsHash) => {
           console.log(err,ipfsHash);
           //setState by setting ipfsHash to ipfsHash[0].hash 
-          this.setState({ ipfsHash:ipfsHash[0].hash });
+          this.setState({ ipfsHash:ipfsHash[0].hash,size:ipfsHash[0].size});
      // call Ethereum contract method "sendHash" and .send IPFS hash to etheruem contract 
     //return the transaction hash from the ethereum contract
     //see, this https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-send
           
-          storehash.methods.addHash(this.state.ipfsHash,this.state.account).send({
+          storehash.methods.addHash(this.state.ipfsHash,this.state.account,this.state.size).send({
               from:this.state.account
           }, (error, transactionHash) => {
             console.log(transactionHash);
