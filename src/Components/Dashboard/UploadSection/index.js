@@ -7,7 +7,7 @@ class UploadSection extends Component {
     }
     render() { 
         return ( 
-            <div>
+            <div className="col s12" style={{'backgroundColor':'red', marginTop:'1em', fontSize:'1.5em'}}>
                 Upload Files Here.
             </div>
         );
