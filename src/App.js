@@ -73,7 +73,11 @@ class App extends Component {
           <h2>Intro Here.</h2>
         </div>
       );
+      const viewTransactions = () => (
+        <ViewTransactions account={this.state.account}/>
+      );
       return (
+        
         <div className="App">
           <Router>
           <div>
@@ -85,7 +89,7 @@ class App extends Component {
             </nav>
             <Route exact path="/" component={Homepage} />  
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/viewTransactions" component={ViewTransactions} />
+            <Route path="/viewTransactions" component={viewTransactions}  />
             <Route path="/about" component={AboutUs} />
           </div>
           </Router>
