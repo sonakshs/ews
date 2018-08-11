@@ -4,7 +4,7 @@ import web3 from "../web3.js";
 import ipfs from "../ipfs.js";
 import ViewSection from './ViewSection';
 import UploadSection from './UploadSection';
-
+import storehash from "../storeHash.js";
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -49,12 +49,12 @@ class Dashboard extends Component {
     //return the transaction hash from the ethereum contract
     //see, this https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-send
           
-        //   storehash.methods.sendHash(this.state.ipfsHash).send({
-        //     from: accounts[0] 
-        //   }, (error, transactionHash) => {
-        //     console.log(transactionHash);
-        //     this.setState({transactionHash});
-        //   }); //storehash 
+          storehash.methods.addHash(this.state.ipfsHash,this.props.account).send({
+              from:this.props.account
+          }, (error, transactionHash) => {
+            console.log(transactionHash);
+            this.setState({transactionHash});
+          }); //storehash 
         }) //await ipfs.add 
       }; //onSubmit
       //to render
