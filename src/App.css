@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: monospace;
 }
 
 .App-logo {
@@ -21,7 +22,12 @@
 .App-intro {
   font-size: large;
 }
-
+.btn {
+  background-color: #0f2d4c !important;
+}
+.btn:hover, .btn-large:hover{
+  background-color: #0f2d4c;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -5,6 +5,7 @@ import web3 from "./Components/web3.js";
 import './App.css';
 import Dashboard from './Components/Dashboard';
 import ViewTransactions from './Components/ViewTransactions';
+import AboutUs from './Components/AboutUs/index.js';
 
 class App extends Component {
     constructor(props) {
@@ -49,12 +50,18 @@ class App extends Component {
           <li>
             <Link to="#">Logout</Link>
           </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
         </ul>
       )
       const navLoggedOut = (
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>      
             <Link to="/#">Login</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
           </li>
         </ul>
       )
@@ -79,6 +86,7 @@ class App extends Component {
             <Route exact path="/" component={Homepage} />  
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/viewTransactions" component={ViewTransactions} />
+            <Route path="/about" component={AboutUs} />
           </div>
           </Router>
         </div>

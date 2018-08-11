@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import web3 from "../web3.js";
 import ipfs from "../ipfs.js";
-import ViewSection from './ViewSection';
-import UploadSection from './UploadSection';
 import storehash from "../storeHash.js";
 class Dashboard extends Component {
     constructor(props) {
@@ -25,7 +23,7 @@ class Dashboard extends Component {
         reader.readAsArrayBuffer(file)
         reader.onloadend = () => this.convertToBuffer(reader)    
       };
- convertToBuffer = async(reader) => {
+    convertToBuffer = async(reader) => {
       //file is converted to a buffer for upload to IPFS
         const buffer = await Buffer.from(reader.result);
       //set this buffer -using es6 syntax
@@ -67,28 +65,29 @@ class Dashboard extends Component {
       }
     render() { 
         return ( 
-            <div style={{}}>
+            <div className="container" style={{}}>
                 Dashboard account id = {this.state.account}
                 <h3> Choose file to send to IPFS </h3>
-          <form onSubmit={this.onSubmit}>
-            <input 
-              type = "file"
-              onChange = {this.captureFile}
-            />
-             <button 
-             type="submit"> 
-             Send it 
-             </button>
-          </form>
-                <div className="container">
-                    <div className="row">
-                        <div className="col s12 m6">
-                            <ViewSection/>
-                        </div>
-                        <div className="col s12 m6">
-                            <UploadSection/>
-                        </div>
-                    </div>
+                <form onSubmit={this.onSubmit}>
+                    <input 
+                    type = "file"
+                    onChange = {this.captureFile}
+                    />
+                    <button className="waves-effect waves-light btn" type="submit"> 
+                    Send it<i className="material-icons right">send</i> 
+                    </button>
+                </form>
+                <div style={{border: '1px solid red', marginTop: '6em', padding:'2em'}}>
+                    <h4> Choose confidential(private) files to upload.</h4>
+                    <form onSubmit={this.onSubmit}>
+                        <input 
+                        type = "file"
+                        onChange = {this.captureFile}
+                        />
+                        <button className="waves-effect waves-light btn" type="submit"> 
+                        Send it<i class="material-icons right">send</i> 
+                        </button>
+                    </form>
                 </div>
             </div>
         );
