@@ -7,7 +7,7 @@ class AboutUs extends Component {
     }
     render() { 
         return (  
-            <div className="container" style={{marginTop: '2em'}}>
+            <div className="container" style={{marginTop: '10em'}}>
                 <div className="row">
                     <div className="col s12 m4">
                         <div className="card">

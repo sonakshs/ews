@@ -32,11 +32,14 @@ class ViewTransactions extends Component {
     }
     render() { 
         return ( 
+            <div className="container">
+                
             <div>
                 View Transactions Here.
                 {/* <button>{this.state.arr[0]}</button>
                 <button>{this.state.arr[1]}</button>
                 <button>{this.state.arr[2]}</button> */}
+            </div>
             </div>
         );
     }
