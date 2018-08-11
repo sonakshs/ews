@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fs-extra": "^7.0.0",
+    "ipfs-api": "^23.0.0",
     "jquery": "^3.3.1",
     "materialize-css": "^0.100.2",
     "prop-types": "^15.6.2",
