@@ -85,7 +85,7 @@ class Dashboard extends Component {
                         onChange = {this.captureFile}
                         />
                         <button className="waves-effect waves-light btn" type="submit"> 
-                        Send it<i class="material-icons right">send</i> 
+                        Send it<i className="material-icons right">send</i> 
                         </button>
                     </form>
                 </div>

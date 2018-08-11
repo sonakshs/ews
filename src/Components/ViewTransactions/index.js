@@ -17,8 +17,8 @@ class ViewTransactions extends Component {
     }
     render() { 
         return ( 
-            <div>
-                View Transactions Here.
+            <div className="container">
+                
             </div>
         );
     }
