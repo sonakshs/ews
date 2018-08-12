@@ -23,13 +23,28 @@ class ViewTransactions extends Component {
            })
        }
    }
+   renderStateSearch(){
+    this.setState({arr:[]});
+    var that = this;
+    for(var i=0;i<5;i++){
+        storeHash.methods.getHash(document.getElementById("address").value,i).call().then(function(res){
+           console.log(res);
+           if(res["0"]){
+             that.setState({
+                 arr: [...that.state.arr,res]
+               })
+           }
+        
+        })
+    }
+}
    componentDidMount(){
        this.renderState();
    }
    render() {
        const rows= this.state.arr.map((transactionObject,index) => {
        return (
-           <tr key={index}>
+           <tr key={index} >
                <td>{index + 1}</td>
                <td>{transactionObject["0"]}</td>
                <td>{transactionObject["1"]}&nbsp;bytes</td>
@@ -43,7 +58,15 @@ class ViewTransactions extends Component {
    })
        return (
            <div className="container">
-               <table className="highlight">
+               <div class="input-field col s6">
+                     <label for="last_name">Enter ETH address to see the transactions</label>
+                    <input id="address" type="text" class="validate" required/>
+                    <button className="waves-effect waves-light btn" onClick={()=>{this.renderStateSearch()}}> 
+                        Go<i className="material-icons right">send</i> 
+                        </button>
+              </div>    
+              <p style={{textAlign:'center',marginTop:'2em',marginBottom:'1em'}}>Or</p>
+               <table className="highlight" style={{overflowY:'auto'}}>
                    <thead>
                    <tr>
                        <th>Name</th>

@@ -13,7 +13,8 @@ class Dashboard extends Component {
             gasUsed:'',
             txReceipt: '',
             account:'',
-            size:-1
+            size:-1,
+            showResults:false
         }
     }
     captureFile =(event) => {
@@ -36,6 +37,7 @@ class Dashboard extends Component {
         const accounts = this.state.account;
        
         console.log('Sending from Metamask account: ' +this.state.account);
+        this.setState({showResults:true});
       //obtain contract address from storehash.js
         // const ethAddress= await storehash.options.address;
         // this.setState({ethAddress});
@@ -54,6 +56,7 @@ class Dashboard extends Component {
           }, (error, transactionHash) => {
             console.log(transactionHash);
             this.setState({transactionHash});
+            this.setState({showResults:false});
           }); //storehash 
         }) //await ipfs.add 
       }; //onSubmit
@@ -65,6 +68,21 @@ class Dashboard extends Component {
         });
       }
     render() { 
+        var spinner;
+        if(this.state.showResults){
+            spinner=  <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-red">
+                 <div class="circle-clipper left">
+                 <div class="circle"></div>
+                 </div><div class="gap-patch">
+                 <div class="circle"></div>
+                 </div><div class="circle-clipper right">
+                 <div class="circle"></div>
+                 </div>
+             </div>
+         </div>
+        }
+        else spinner=<div></div>
         return ( 
             <div className="container" style={{}}>
                 Dashboard account id = {this.state.account}
@@ -78,12 +96,18 @@ class Dashboard extends Component {
                     Send it<i className="material-icons right">send</i> 
                     </button>
                 </form>
+                <div style={{marginTop:'4em'}}>
+                <strong style={{textAlign:'center',marginTop: '2em'}}><b>Your IPFS file hash: </b>{this.state.ipfsHash}</strong>
+                <br/>
+                <strong style={{textAlign:'center',marginTop: '2em'}}><b>TxReceipt: </b>{this.state.transactionHash}</strong>
+                </div>
+               {spinner}
                 <div style={{border: '1px solid red', marginTop: '6em', padding:'2em'}}>
                     <h4> Choose confidential(private) files to upload.</h4>
-                    <form onSubmit={this.onSubmit}>
+                    <form encType="multipart/form-data" method="POST" action="http://172.16.27.88:8001/ews/digilock/">
                         <input 
                         type = "file"
-                        onChange = {this.captureFile}
+                        name = "file"
                         />
                         <button className="waves-effect waves-light btn" type="submit"> 
                         Send it<i className="material-icons right">send</i> 
