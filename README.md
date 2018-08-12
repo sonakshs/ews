@@ -23,15 +23,15 @@
 ## Encrypting your private files (running our backend)
  Follows these steps to get NuCypher up and running in backend
  
-    . pipenv install --dev --three --skip-lock
-    
-    . pipenv shell
-    
-    . pip3 install -e .
-    
-    . pip install virtualenv
-    
-    . virtualenv yourenv -p python3.6 ##Make sure version is not 3.7 (edited)
+          . pipenv install --dev --three --skip-lock
 
-    . pip install django==1.9
+          . pipenv shell
+
+          . pip3 install -e .
+
+          . pip install virtualenv
+
+          . virtualenv yourenv -p python3.6 ##Make sure version is not 3.7 (edited)
+
+          . pip install django==1.9
         
