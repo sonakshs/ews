@@ -14,7 +14,8 @@ class Dashboard extends Component {
             txReceipt: '',
             account:'',
             size:-1,
-            showResults:false
+            showResults:false,
+            message:''
         }
     }
     captureFile =(event) => {
@@ -35,9 +36,9 @@ class Dashboard extends Component {
         event.preventDefault();
        //bring in user's metamask account address
         const accounts = this.state.account;
-       
-        console.log('Sending from Metamask account: ' +this.state.account);
+        var message = 'Sending from Metamask account: ' +this.state.account
         this.setState({showResults:true});
+        this.setState({message})
       //obtain contract address from storehash.js
         // const ethAddress= await storehash.options.address;
         // this.setState({ethAddress});

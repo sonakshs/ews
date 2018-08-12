@@ -12,7 +12,7 @@ class ViewTransactions extends Component {
    }
    renderState(){
        var that = this;
-       for(var i=0;i<8;i++){
+       for(var i=0;i<13;i++){
            storeHash.methods.getHash(this.props.account,i).call().then(function(res){
               console.log(res);
               if(res["0"]){
