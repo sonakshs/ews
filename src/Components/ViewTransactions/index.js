@@ -46,6 +46,7 @@ class ViewTransactions extends Component {
    componentDidMount(){
        this.renderState();
    }
+
    render() {
        const rows= this.state.arr.map((transactionObject,index) => {
        return (

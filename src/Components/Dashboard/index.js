@@ -68,6 +68,19 @@ class Dashboard extends Component {
             that.setState({account: result[0]})
         });
       }
+      privateFormSubmit(){
+        var formData = new FormData();
+        var imagefile = document.querySelector('#file2');
+        formData.append("image", imagefile.files[0]);
+        console.log("hello");
+        fetch("http://172.16.27.88:8001/ews/ewsupload/", {
+            method: 'POST', // or 'PUT'
+            body: formData, // data can be `string` or {object}!
+            headers:{
+                'Content-Type': 'multipart/form-data'
+            }
+          }).then(res => res.json())
+    }
     render() { 
         const uploadedMessage = (
             <div style={{marginTop:'4em'}}>
@@ -113,11 +126,12 @@ class Dashboard extends Component {
                {spinner}
                 <div style={{border: '1px solid red', marginTop: '6em', padding:'2em'}}>
                     <h4> Choose confidential(private) files to upload.</h4>
-                    <form encType="multipart/form-data" method="POST" action="http://172.16.27.88:8001/ews/digilock/">
+                    <form encType='multipart/form-data' action='http://172.16.27.88:8001/ews/ewsupload/' method='post'>
                         <input 
                         type = "file"
                         name = "file"
-                        accept = ".txt"
+                        id="file2"
+                        accept=".txt"
                         />
                         <button className="waves-effect waves-light btn" type="submit"> 
                         Send it<i className="material-icons right">send</i> 
