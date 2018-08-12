@@ -19,7 +19,7 @@ can only be viewed by the user who has the encryption key and the capsule,thus e
         
         . Log in into metamask
         
-        . npm start then see the app running at http://localhost:3000/
+        . npm start then see the app running at http://localhost:3000/dashboard
         
         . Choose file to upload to IPFS server
         
