@@ -63,12 +63,12 @@ class ViewTransactions extends Component {
    })
        return (
            <div className="container" style={{'border': '1px solid #000', padding:'1em', marginTop: '1.4em'}}>
-               <div class="row">
-                    <form class="col s12">
-                    <div class="row">
-                        <div class="input-field inline col s10">
+               <div className="row">
+                    <form className="col s12">
+                    <div className="row">
+                        <div className="input-field inline col s10">
                             <label htmlFor="last_name">Enter ETH address to see the public transactions</label>
-                            <input id="address" type="text" class="validate" required/>
+                            <input id="address" type="text" className="validate" required/>
                         </div>
                         <div className="col s2">
                             <button className="col s12 waves-effect waves-light btn" style={{height: '3rem', marginTop: '0.4rem'}} onClick={()=>{this.renderStateSearch()}}> 

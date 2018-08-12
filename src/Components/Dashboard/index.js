@@ -81,7 +81,7 @@ class Dashboard extends Component {
         )
         var spinner;
         if(this.state.showResults){
-            spinner=  <div class="preloader-wrapper big active">
+            spinner=  <div className="preloader-wrapper big active">
             <div className="spinner-layer spinner-red">
                  <div className="circle-clipper left">
                  <div className="circle"></div>
