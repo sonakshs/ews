@@ -99,7 +99,7 @@ class App extends Component {
                 <i className="material-icons large">cloud</i>
                 <div className="card-title">Simplest Storage Solution</div>
                 <div className="white-text-custom">
-                  Store your certificates and government/classified documents on Ethereum.
+                  Store your certificates and government/classified documents on Blockchain.
                 </div>
               </div>
             </div>
@@ -108,7 +108,7 @@ class App extends Component {
                 <i className="material-icons large">sd_storage</i>
                 <div className="card-title">Cloud Bucket</div>
                 <div className="white-text-custom">
-                  No need to buy cloud buckets. Pay only for the storage you use.
+                  No need to buy cloud buckets. Pay only for the amount of storage you use.
                 </div>
               </div>
             </div>
