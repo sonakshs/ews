@@ -1,0 +1,3 @@
+PREV_KEY = '0xb118c7ef116ceab6321bdf9f3da4dab6d99fb8e6'
+CIPHER = '0xb118c7ef116ceab6321bdf9f3da4dab6d99fb8e60b118c7ef116ceab6321bdf9f3da4dab6d99fb8e6'
+CAPSULE = '0xb118c7ef118c7ef116cf3da4dab6d9f3da4dab6d9f3da4dab6d9f3da4dab6d9f3da4dab6d9f3da4dab6d9f3da4dab6d9'
