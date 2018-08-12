@@ -119,13 +119,13 @@ class App extends Component {
             <div className="modal-content">
               <p>Logout your Metamask Account to Logout of EWS.</p>
             </div>
-            <img src=""/>
+            <img src="https://gateway.ipfs.io/ipfs/QmZGqHEsMGTUpH2LvTNEt25iPV9F8zgskssxst5AdjULQu" style={{height: '10em'}}/>
           </div>
           <div id="loginModal" className="modal">
             <div className="modal-content">
               <p>Login through Metamask and refresh this page.</p>
             </div>
-            <img src=""/>
+            <img src="https://gateway.ipfs.io/ipfs/QmZGqHEsMGTUpH2LvTNEt25iPV9F8zgskssxst5AdjULQu" style={{height: '10em'}}/>
           </div>
         </div>
       );
