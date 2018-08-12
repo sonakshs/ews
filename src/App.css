@@ -45,8 +45,24 @@ nav ul a:hover {
 }
 .card-title{
   color: #fff !important;
+  font-size: 1.3em;
+  height: 2.2em;
+  margin-top: 1em
 }
 .input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
   border-bottom: 1px solid #cddbe8;
     box-shadow: 0 1px 0 0 #0f2d4c;
+}
+.card-panel{
+  background-color: #163e67;
+  height: 21em
+}
+.material-icons{
+  color: white !important;
+}
+.white-text-custom{
+  font-size: 0.9em;
+  margin-top: 2em;
+  height: 6em;
+  color: white;
 }

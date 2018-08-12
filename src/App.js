@@ -91,8 +91,66 @@ class App extends Component {
         this.state.loggedIn ? navLoggedIn : navLoggedOut
       )
       const Homepage = () => (
-        <div>
-          <h2>Intro Here.</h2>
+        <div className="container" style={{backgroundColor: '#fff', marginTop: '1em'}}>
+          <h3>Ethereum Web Services</h3>
+          <div className="row">
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large">cloud</i>
+                <div class="card-title">Simplest Storage Solution</div>
+                <div class="white-text-custom">
+                  Store your certificates and government/classified documents on Ethereum.
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large">sd_storage</i>
+                <div class="card-title">Cloud Bucket</div>
+                <div class="white-text-custom">
+                  No need to buy cloud buckets. Pay only for the storage you use.
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large">business_center</i>
+                <div class="card-title">Looking for a storage bucket?</div>
+                <div class="white-text-custom">
+                  Small business' website? Store media files/bundles on ethereum and access them anywhere.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large">compare_arrows</i>
+                <div class="card-title">End to End Encryption</div>
+                <div class="white-text-custom">
+                  Store important notes/passwords privately. Pretty handy for small files(texts, images, GIFs). 
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large">security</i>
+                <div class="card-title">Security at every step</div>
+                <div class="white-text-custom">
+                  Files stored on decentralized blockchain network. Attacks impossible!
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <div class="card-panel">
+                <i class="material-icons large">cloud_done</i>
+                <div class="card-title">Save Paperwork</div>
+                <div class="white-text-custom">
+                  No need to carry physical documents to an interview. Store them throughout the world, in a decentralized network.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       );
       const viewTransactions = () => (
