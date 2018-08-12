@@ -68,23 +68,33 @@ class Dashboard extends Component {
         });
       }
     render() { 
+        const uploadedMessage = (
+            <div style={{marginTop:'4em'}}>
+                <strong style={{textAlign:'center',marginTop: '2em'}}><b>Your Last Uploaded IPFS file hash: </b>{this.state.ipfsHash}</strong>
+                    <br/>
+                <strong style={{textAlign:'center',marginTop: '2em'}}><b>Your Last TxReceipt: </b>{this.state.transactionHash}</strong>
+            </div>            
+        )
+        const message = ( 
+            this.state.ipfsHash ? uploadedMessage : null
+        )
         var spinner;
         if(this.state.showResults){
             spinner=  <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-red">
-                 <div class="circle-clipper left">
-                 <div class="circle"></div>
-                 </div><div class="gap-patch">
-                 <div class="circle"></div>
-                 </div><div class="circle-clipper right">
-                 <div class="circle"></div>
+            <div className="spinner-layer spinner-red">
+                 <div className="circle-clipper left">
+                 <div className="circle"></div>
+                 </div><div className="gap-patch">
+                 <div className="circle"></div>
+                 </div><div className="circle-clipper right">
+                 <div className="circle"></div>
                  </div>
              </div>
          </div>
         }
         else spinner=<div></div>
         return ( 
-            <div className="container" style={{}}>
+            <div className="container" style={{marginTop:'1em'}}>
                 Dashboard account id = {this.state.account}
                 <h3> Choose file to send to IPFS </h3>
                 <form onSubmit={this.onSubmit}>
@@ -96,10 +106,8 @@ class Dashboard extends Component {
                     Send it<i className="material-icons right">send</i> 
                     </button>
                 </form>
-                <div style={{marginTop:'4em'}}>
-                <strong style={{textAlign:'center',marginTop: '2em'}}><b>Your IPFS file hash: </b>{this.state.ipfsHash}</strong>
-                <br/>
-                <strong style={{textAlign:'center',marginTop: '2em'}}><b>TxReceipt: </b>{this.state.transactionHash}</strong>
+                <div>
+                    {message}
                 </div>
                {spinner}
                 <div style={{border: '1px solid red', marginTop: '6em', padding:'2em'}}>

@@ -119,11 +119,13 @@ class App extends Component {
             <div className="modal-content">
               <p>Logout your Metamask Account to Logout of EWS.</p>
             </div>
+            <img src=""/>
           </div>
           <div id="loginModal" className="modal">
             <div className="modal-content">
               <p>Login through Metamask and refresh this page.</p>
             </div>
+            <img src=""/>
           </div>
         </div>
       );
