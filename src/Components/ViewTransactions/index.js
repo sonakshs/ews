@@ -14,7 +14,8 @@ class ViewTransactions extends Component {
        var that = this;
        that.setState({usermetamaskUserId: true})
        var add="";
-       if(document.getElementById("address").value) add=document.getElementById("address").value;
+       if(document.getElementById("address").value) 
+            add=document.getElementById("address").value;
        else add=this.props.account;
        for(var i=0;i<13;i++){
            storeHash.methods.getHash(this.props.account,i).call().then(function(res){
@@ -35,7 +36,7 @@ class ViewTransactions extends Component {
     // that.setState({arr:[]});
     // console.log(that.state.arr.length);
     // that.setState({usermetamaskUserId: false})
-    if(document.getElementById("address").value.length==42){   
+    if(document.getElementById("address").value.length===42){   
         var _add=document.getElementById("address").value;
         console.log(typeof(document.getElementById("address").value))  
         
@@ -65,8 +66,9 @@ class ViewTransactions extends Component {
                <td>{transactionObject["0"]}</td>
                <td>{transactionObject["1"]}&nbsp;bytes</td>
                <td>
-                   <a href={"https://gateway.ipfs.io/ipfs/"+transactionObject["0"]} target="_blank" className="btn btn-small">
-                        Click to Open
+                   <a href={"https://gateway.ipfs.io/ipfs/"+transactionObject["0"]} target="_blank" className="btn btn-small" style={{display:'inline-flex'}}>
+                        Open&nbsp;<i class="material-icons large">open_in_new</i>
+                
                    </a>
                </td>
            </tr>
@@ -91,16 +93,14 @@ class ViewTransactions extends Component {
                       </form>
                     </div>    
                 <div> 
-                <p style={{textAlign:'center',marginTop:'2em',marginBottom:'1em', textAlign: 'left'}}>{this.state.metamaskUserId ? "Your Transactions: " : "Transactions of entered account: " }</p>
+                <p style={{marginTop:'2em',marginBottom:'1em', textAlign: 'left'}}>{this.state.metamaskUserId ? "Your Transactions: " : "Transactions of entered account: " }</p>
                 <table className="highlight" style={{overflowY:'auto'}}>
                     <thead>
                     <tr>
                         <th>Name</th>
                         <th>IPFS Hash</th>
                         <th>Size</th>
-                        <th>
-                            View File
-                        </th>
+                        <th>View File</th>
                     </tr>
                     </thead>
                     <tbody>
