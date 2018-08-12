@@ -22,7 +22,7 @@ class App extends Component {
    
     toggleLogoutClass() {
       var modalClass = document.getElementById('logoutModal').style.display
-      if(!modalClass || modalClass == "none")
+      if(!modalClass || modalClass === "none")
         document.getElementById('logoutModal').style.display = "block";
       setTimeout(function() { 
         document.getElementById("logoutModal").style.display = "none"; 
@@ -31,7 +31,7 @@ class App extends Component {
     }
     toggleLoginClass() {
       var modalClass = document.getElementById('loginModal').style.display
-      if(!modalClass || modalClass == "none")
+      if(!modalClass || modalClass === "none")
         document.getElementById('loginModal').style.display = "block";
       setTimeout(function() { 
         document.getElementById("loginModal").style.display = "none"; 

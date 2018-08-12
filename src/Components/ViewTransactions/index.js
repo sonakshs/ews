@@ -27,7 +27,7 @@ class ViewTransactions extends Component {
    renderStateSearch(){
     this.setState({arr:[]});
     var that = this;
-    if(document.getElementById("address").value.length==42){     
+    if(document.getElementById("address").value.length===42){     
         for(var i=0;i<7;i++){
             storeHash.methods.getHash(document.getElementById("address").value,i).call().then(function(res){
             console.log(res);
@@ -55,7 +55,7 @@ class ViewTransactions extends Component {
                <td>{transactionObject["1"]}&nbsp;bytes</td>
                <td>
                    <a href={"https://gateway.ipfs.io/ipfs/"+transactionObject["0"]} target="_blank" className="btn btn-small">
-                        Click to Open
+                        <span style={{"display":'flex', 'marginLeft':'auto', 'marginRight': 'auto'}}>Open&nbsp;<i className="material-icons">open_in_new</i></span>
                    </a>
                </td>
            </tr>
@@ -79,7 +79,7 @@ class ViewTransactions extends Component {
                     </form>
                 </div>    
                <div> 
-                <p style={{textAlign:'center',marginTop:'2em',marginBottom:'1em', textAlign: 'left'}}>Transacations: </p>
+                <p style={{marginTop:'2em',marginBottom:'1em', textAlign: 'left'}}>Transacations: </p>
                 <table className="highlight" style={{overflowY:'auto'}}>
                     <thead>
                     <tr>
