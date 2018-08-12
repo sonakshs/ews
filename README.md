@@ -1,5 +1,5 @@
 ## Ethereum Web Services (EWS)
-          ....Security At every Step
+                             ....Security At every Step
 ## Description
 
 Our platform is named as EWS which serves as a web portal for the government to maintain record of centrally recognised       
