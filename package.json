@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "fs-extra": "^7.0.0",
     "ipfs-api": "^23.0.0",
     "jquery": "^3.3.1",
